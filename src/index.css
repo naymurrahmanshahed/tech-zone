@@ -4,6 +4,11 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -24,4 +29,23 @@ body {
   height: 15%;
   background-color: #7d758d;
   border-radius: 50px;
+}
+
+/* slider */
+
+.slider {
+  height: calc(100vh - 5rem);
+  width: 500vw;
+  display: flex;
+  transition: 1s ease;
+}
+
+/* slide */
+
+.slide {
+  width: 100vw;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

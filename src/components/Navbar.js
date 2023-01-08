@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar bg-violet-700 text-violet-50 h-20 flex items-center justify-center">
-      <div className="container mx-auto flex justify-between items-center">
+      <nav className="container mx-auto px-10  sm:flex-row flex-col  flex justify-between items-center">
         <div className="nav-left">
           <Link to={"/"}>
             <h2 className="brand text-2xl text-violet-50 italic font-semibold  ">
@@ -39,8 +39,8 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink>
-                <span className="relative group">
+              <NavLink className="relative group">
+                <span>
                   <BsCart3 />
                   <span className=" absolute bottom-2 text-sm left-2 bg-rose-500 h-5 w-5 flex items-center justify-center rounded-full group-hover:bg-sky-500 duration-300">
                     1
@@ -50,7 +50,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-      </div>
+      </nav>
     </div>
   );
 };
