@@ -39,7 +39,7 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink className="relative group">
+              <NavLink to="/cart" className="relative group">
                 <span>
                   <BsCart3 />
                   <span className=" absolute bottom-2 text-sm left-2 bg-rose-500 h-5 w-5 flex items-center justify-center rounded-full group-hover:bg-sky-500 duration-300">
