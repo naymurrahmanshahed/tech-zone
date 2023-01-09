@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
-import { Link } from "react-router-dom";
+
 import Slide from "./Slide";
 
 const data = [
@@ -38,7 +38,7 @@ const data = [
   },
   {
     id: 5,
-    src: "https://i.ibb.co/YbS7mL2/smart-watches.jpg",
+    src: "//cdn.shopify.com/s/files/1/0274/5483/2778/collections/PG_Website_Brands_Smartwatches_f41b4054-8b21-4ce1-8531-7eb89c7e9f4f.jpg?v=1618234991",
     headline: "Stay connected with smart watches",
     body: "Stay connected and on top of your day with our smart watches. Our selection offers a range of styles and features, including fitness tracking, phone notifications, and voice assistants. These watches are the perfect combination of functionality and style.",
     cta: "Connect with a smart watch",
