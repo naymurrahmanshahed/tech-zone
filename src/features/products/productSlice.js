@@ -24,10 +24,10 @@ export const productSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(productFetching.pending, (state, action) => {
-      state.status = "pending";
+      state.status = "loading..";
     });
     builder.addCase(productFetching.fulfilled, (state, action) => {
-      state.status = "success";
+      state.status = "";
       state.items = action.payload;
     });
     builder.addCase(productFetching.rejected, (state, action) => {
