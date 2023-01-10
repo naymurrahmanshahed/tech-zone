@@ -1,9 +1,13 @@
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { addtoCart } from "../features/products/cartSlice";
 import { currencyFormatter } from "../utilities/currencyFormatter";
 
 const Card = ({ product }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const addToCart = (product) => {
+    dispatch(addtoCart(product));
     navigate("/cart");
   };
   return (
