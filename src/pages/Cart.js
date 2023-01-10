@@ -1,8 +1,10 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
   addtoCart,
   decreaseCart,
+  getSubtotal,
   removeAllFromCart,
   removeFromCart,
 } from "../features/products/cartSlice";
@@ -10,7 +12,13 @@ import { currencyFormatter } from "../utilities/currencyFormatter";
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const { cartItems: data } = useSelector((state) => state.carts);
+  const { cartItems: data, cartTotalAmount } = useSelector(
+    (state) => state.carts
+  );
+
+  useEffect(() => {
+    dispatch(getSubtotal());
+  }, [data, dispatch]);
 
   const removeHandler = (product) => {
     dispatch(removeFromCart(product));
@@ -94,7 +102,7 @@ const Cart = () => {
                   </div>
                   <div className="total-price">
                     <div className="total-price text-end">
-                      {currencyFormatter(product.price)}
+                      {currencyFormatter(product.price * product.cartQuantity)}
                     </div>
                   </div>
                 </div>
@@ -111,7 +119,9 @@ const Cart = () => {
             <div className="flex flex-col items-start gap-2">
               <div className="top flex justify-between w-full text-2xl font-medium ">
                 <span className="text-sky-500">Subtotal</span>
-                <span className="text-rose-500">200$</span>
+                <span className="text-rose-500">
+                  {currencyFormatter(cartTotalAmount)}
+                </span>
               </div>
               <p className="text-gray-400">
                 Taxes and shipping costs are calculated at the checkout
