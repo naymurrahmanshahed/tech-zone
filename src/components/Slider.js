@@ -67,7 +67,7 @@ const Slider = () => {
         style={{ transform: `translateX(-${100 * currentSlide}vw)` }}
       >
         {data.map((item) => (
-          <Slide item={item} />
+          <Slide item={item} key={item.id} />
         ))}
       </div>
       <div className="slider-btns absolute bottom-5 left-0 right-0 z-[1] text-2xl flex gap-5 m-auto w-fit">
