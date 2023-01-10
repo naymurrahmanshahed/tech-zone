@@ -1,9 +1,15 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { removeFromCart } from "../features/products/cartSlice";
 import { currencyFormatter } from "../utilities/currencyFormatter";
 
 const Cart = () => {
+  const dispatch = useDispatch();
   const { cartItems: data } = useSelector((state) => state.carts);
+
+  const removeHandler = (product) => {
+    dispatch(removeFromCart(product));
+  };
   return (
     <div className="cart-section container mx-auto py-10 px-10">
       <h2 className="section-title uppercase font-bold space-font  text-2xl mt-10 mb-10 text-center tracking-wider ">
@@ -30,7 +36,10 @@ const Cart = () => {
                 />
                 <div className="product-details flex flex-col items-start gap-3">
                   <span> {product.name}</span>
-                  <button className="uppercase text-gray-400 hover:text-rose-400">
+                  <button
+                    onClick={() => removeHandler(product)}
+                    className="uppercase text-gray-400 hover:text-rose-400"
+                  >
                     Remove
                   </button>
                 </div>
